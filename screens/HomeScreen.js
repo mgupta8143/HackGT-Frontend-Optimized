@@ -88,7 +88,12 @@ export default function HomeScreen({ navigation }) {
                   source={require('../assets/scan.json')} autoPlay loop
                 />
                 
+    
+                
+
+
             </View>
+           
         </SafeAreaView>
         );
     

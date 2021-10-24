@@ -32,7 +32,6 @@ const scanImageStyles = {
 export default function ScanImageScreen({ navigation }) {
   return (
     <SafeAreaView style={scanImageStyles.background}>
-      
       <DocumentScanner navigation={navigation}/>
     </SafeAreaView>
   );

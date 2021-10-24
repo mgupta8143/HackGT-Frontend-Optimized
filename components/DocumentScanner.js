@@ -76,7 +76,28 @@ export default class DocumentScanner extends PureComponent {
     if (this.camera) {
       const options = { quality: 0.5, base64: true };
       const data = await this.camera.takePictureAsync(options);
-      console.log(data.uri);
+      const postData = 'data:image/jpg;base64,' + data.base64;
+       const RequestURL = "https://httpbin.org/post";
+      fetch(RequestURL,
+        {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(postData)
+        })
+        .then(res => {
+          this.props.navigation.navigate('STL', res.json());
+        })
+        .catch((error) => {
+           console.log(error);
+           this.props.navigation.navigate('STL', {
+             error: "Not working"
+           });
+        })
+
+
     }
   };
 }
