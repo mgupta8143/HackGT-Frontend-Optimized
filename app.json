@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "copy-frontend",
+    "slug": "copy-frontend",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "copy-frontend"
+}
